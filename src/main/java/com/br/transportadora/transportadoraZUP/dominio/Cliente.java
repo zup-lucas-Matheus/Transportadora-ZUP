@@ -1,4 +1,10 @@
 package com.br.transportadora.transportadoraZUP.dominio;
 
-public class Cliente {
+public class Cliente extends Pessoa {
+
+
+
+
+
+
 }
