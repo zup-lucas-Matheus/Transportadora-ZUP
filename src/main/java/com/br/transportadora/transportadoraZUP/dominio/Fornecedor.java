@@ -5,7 +5,6 @@ import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @RequiredArgsConstructor
 public class Fornecedor extends Pessoa{
