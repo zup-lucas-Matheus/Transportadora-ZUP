@@ -1,8 +1,17 @@
 package com.br.transportadora.transportadoraZUP.dominio;
 
-public class Pessoa {
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
+@Data
+@RequiredArgsConstructor
+abstract class Pessoa {
+    //Atributos
     private String nome;
+    private String email;
+    private String telefone;
+    private String cpf;
+
 
 }
