@@ -12,6 +12,7 @@ abstract class Pessoa {
     private String email;
     private String telefone;
     private String cpf;
+    private String Endereco;
 
 
 }
