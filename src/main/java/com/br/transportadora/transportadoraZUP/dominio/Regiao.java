@@ -7,5 +7,6 @@ public enum Regiao {
     BAHIA,
     MATOGROSSO,
     SAOPAULO,
+    RIODEJANEIRO,
 
 }
