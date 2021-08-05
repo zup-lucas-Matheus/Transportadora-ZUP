@@ -12,9 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Cliente {
 
-    private Regiao regiao;
-    private String categoria;
-    private Pessoa pessoa;
+    private Pessoa cliente;
     private List<Orcamento> orcamentos = new ArrayList<>();
 
 

@@ -10,7 +10,8 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 public class Orcamento {
 
-
+    private Regiao regiao;
+    private Categoria categoria;
     private BigDecimal distancia;
     private LocalDate dataEntrega;
     private String codigoDeContrato;

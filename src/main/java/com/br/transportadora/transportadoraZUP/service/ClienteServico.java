@@ -27,7 +27,7 @@ public class ClienteServico {
     public Cliente cadastrarRotaParaCliente(String cpf, Orcamento orcamento) throws Exception {
 
         for (Cliente cliente: clientes){
-            if (cliente.getPessoa().getCpf().equals(cpf)) {
+            if (cliente.getCliente().getCpf().equals(cpf)) {
                 cliente.getOrcamentos().add(orcamento);
                 return cliente;
             }
