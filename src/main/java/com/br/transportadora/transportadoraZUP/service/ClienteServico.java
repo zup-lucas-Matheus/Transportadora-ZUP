@@ -1,5 +1,6 @@
 package com.br.transportadora.transportadoraZUP.service;
 
+import com.br.transportadora.transportadoraZUP.dominio.Categoria;
 import com.br.transportadora.transportadoraZUP.dominio.Cliente;
 import com.br.transportadora.transportadoraZUP.dominio.Orcamento;
 import org.springframework.stereotype.Service;
@@ -44,10 +45,49 @@ public class ClienteServico {
         throw new Exception("Cliente não encontrado");
     }
 
+//*=============================================================
+// fazer calco do orcamento
+double ClienteOrc;
+    // verificar se existe
+    public Cliente clienteOrcamento(Cliente cpf) throws Exception {
+        for (Cliente objLista : clientes){
+            if (objLista.getCliente().getCpf().equals(cpf)){
+                //throw new Exception("Cliente já existe");
+
+                 ClienteOrc = objLista.getDistancia();
+            }
+        }
+        throw new Exception("Cliente já existe");
+    }
+//====================================================================
+    //escolher o tipo de categoria
+    public double calculoCategoria() {
+
+        double tpCategoria;
+        if(this.ClienteOrc <= 100){
+          tpCategoria =  Categoria.Valor.getCatC();
+        }else if (this.ClienteOrc <= 250){
+          tpCategoria =  Categoria.Valor.getCatB();
+        }else {
+            tpCategoria = Categoria.Valor.getCatA();
+        }
+      return tpCategoria;
+    }
+
+
+//Calculo do orcamento entre o resultado do
+    public double obterOrcamento(){
+        double orcamento = this.ClienteOrc * this.calculoCategoria();
+        return orcamento;
+    }
 
 
 
 
+
+
+
+//===============================================================
     // verificar se existe
 //    public void verificarExiste(Cliente cliente){
 //        for (Cliente percorrerLista : clienteList){
