@@ -3,7 +3,6 @@ package com.br.transportadora.transportadoraZUP.dominio;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -11,15 +10,15 @@ import java.time.LocalDate;
 public class Orcamento {
 
 
-    private BigDecimal distancia;
+    private double distancia;
     private LocalDate dataEntrega;
     private String codigoDeContrato;
+    private double valor;
 
 
+    public double calcularDistancia(){
 
-    public void calcularDistancia(){
-
-
+        return this.distancia * valor;
 
     }
 

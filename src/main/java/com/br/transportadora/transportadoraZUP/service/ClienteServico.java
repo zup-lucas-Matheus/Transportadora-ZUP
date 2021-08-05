@@ -16,17 +16,16 @@ public class ClienteServico {
 
     public List<Cliente> clientes = new ArrayList<>();
 
-    public Cliente CadastrarClienteList(Cliente cliente){
+    public Cliente CadastrarClienteList(Cliente cliente) {
 
         clientes.add(cliente);
         return cliente;
     }
 
 
-
     public Cliente cadastrarRotaParaCliente(String cpf, Orcamento orcamento) throws Exception {
 
-        for (Cliente cliente: clientes){
+        for (Cliente cliente : clientes) {
             if (cliente.getPessoa().getCpf().equals(cpf)) {
                 cliente.getOrcamentos().add(orcamento);
                 return cliente;
@@ -35,10 +34,6 @@ public class ClienteServico {
         throw new Exception("Cliente não encontrado");
 
     }
-
-
-
-
 
 
     // verificar se existe
@@ -58,24 +53,19 @@ public class ClienteServico {
     }
 
 
+//    public Cliente calculoDeOrcamento(String cpf, Orcamento orcamento, int distancia, int valor) {
+//
+//        for (Cliente cliente : clientes) {
+//            if (cliente.getPessoa().getCpf().equals(cpf)) {
+//                cliente.get(distancia * valor);
+//
+//                return cliente;
+//            }
+//        }
+//
+//        throw new Exception("");
+//    }
+//
 
 
-/*
-    public Cliente pesquCliente(String cpf){
-        Cliente cliente = null;
-
-        for ( Clente percorrelista: cliente){
-            if(percorrelista.)
-
-        }
-
-    }
-
-
-    public VisualizarCliente( )
-
-
-
-    //calculoDoOrçamento
-*/
 }
