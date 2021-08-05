@@ -1,6 +1,7 @@
 package com.br.transportadora.transportadoraZUP.dominio;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
@@ -9,11 +10,11 @@ import java.util.List;
 
 @Data
 @RequiredArgsConstructor
-public class Cliente extends Pessoa {
+public class Cliente {
 
-    private String Regiao;
+    private Regiao regiao;
     private String categoria;
-    private List<Cliente> cliente;
+    private Pessoa pessoa;
 
 
 }

@@ -6,13 +6,13 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-abstract class Pessoa {
+public class Pessoa {
     //Atributos
     private String nome;
     private String email;
     private String telefone;
     private String cpf;
-    private String Endereco;
+
 
 
 }

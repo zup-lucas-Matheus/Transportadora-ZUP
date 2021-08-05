@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-public class Fornecedor extends Pessoa{
+public class Fornecedor{
 
     private String indentificacao;
     private String numeroDeContrato;
