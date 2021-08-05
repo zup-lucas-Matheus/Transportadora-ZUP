@@ -1,6 +1,7 @@
 package com.br.transportadora.transportadoraZUP.controller;
 
 import com.br.transportadora.transportadoraZUP.dominio.Cliente;
+import com.br.transportadora.transportadoraZUP.dominio.Orcamento;
 import com.br.transportadora.transportadoraZUP.service.ClienteServico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +22,19 @@ public class ClienteController {
 
     }
 
+
+
+    @PostMapping("/orcamento")
+    public Cliente cadastraOrcamento(@RequestParam String cpf, @RequestBody Orcamento orcamento) throws Exception {
+
+        return clienteServico.cadastrarRotaParaCliente(cpf, orcamento);
+
+    }
+
     @GetMapping
     public List<Cliente> listaDeClientes(){
 
         return clienteServico.listaDeCliente();
 
     }
-
-
 }

@@ -15,6 +15,8 @@ public class Cliente {
     private Regiao regiao;
     private String categoria;
     private Pessoa pessoa;
+    private List<Orcamento> orcamentos = new ArrayList<>();
+
 
 
 }

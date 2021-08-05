@@ -1,10 +1,13 @@
 package com.br.transportadora.transportadoraZUP.service;
 
 import com.br.transportadora.transportadoraZUP.dominio.Cliente;
+import com.br.transportadora.transportadoraZUP.dominio.Orcamento;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 @Service
 public class ClienteServico {
@@ -18,6 +21,24 @@ public class ClienteServico {
         clientes.add(cliente);
         return cliente;
     }
+
+
+
+    public Cliente cadastrarRotaParaCliente(String cpf, Orcamento orcamento) throws Exception {
+
+        for (Cliente cliente: clientes){
+            if (cliente.getPessoa().getCpf().equals(cpf)) {
+                cliente.getOrcamentos().add(orcamento);
+                return cliente;
+            }
+        }
+        throw new Exception("Cliente não encontrado");
+
+    }
+
+
+
+
 
 
     // verificar se existe
@@ -35,6 +56,8 @@ public class ClienteServico {
 
         return clientes;
     }
+
+
 
 
 /*
