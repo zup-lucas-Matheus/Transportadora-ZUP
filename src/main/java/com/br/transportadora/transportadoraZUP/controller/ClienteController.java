@@ -37,4 +37,8 @@ public class ClienteController {
         return clienteServico.listaDeCliente();
 
     }
+    @GetMapping("/buscarcliente")
+    public Cliente buscarClientePorCodigo(@RequestParam String codigo) throws Exception {
+        return clienteServico.buscarClienteporCodigo(codigo);
+    }
 }

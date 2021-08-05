@@ -4,10 +4,8 @@ import com.br.transportadora.transportadoraZUP.dominio.Cliente;
 import com.br.transportadora.transportadoraZUP.dominio.Orcamento;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 @Service
 public class ClienteServico {
@@ -36,6 +34,15 @@ public class ClienteServico {
 
     }
 
+    public Cliente buscarClienteporCodigo(String codigo) throws Exception {
+        for (Cliente clientes: clientes) {
+            if (clientes.getOrcamentos().equals(codigo)) {
+                return clientes;
+            }
+        }
+
+        throw new Exception("Cliente não encontrado");
+    }
 
 
 
