@@ -13,4 +13,13 @@ public class Frete {
     private Regiao regiao;
     private Categoria categoria;
     private double distancia;
+
+
+
+    public double valorDoFrete(){
+        double valorDoFrete = 5;
+
+        return this.distancia * valorDoFrete;
+
+    }
 }

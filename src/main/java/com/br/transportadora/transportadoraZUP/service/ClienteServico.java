@@ -93,7 +93,6 @@ public Cliente cadastrarFreteParaCliente(String cpf, Frete frete) throws Excepti
 
 
 public double calculoDeDestino(String cpf,Frete frete) throws Exception {
-     double valorDoFrete = 5;
 
      for (Cliente cliente : clientes) {
         if (cliente.getCliente().getCpf().equals(cpf)) {
@@ -102,29 +101,7 @@ public double calculoDeDestino(String cpf,Frete frete) throws Exception {
                 if (frete1.getDistancia() < 30) {
                     throw new Exception( "Não atendemos fretes com distacia menores que 30km");
                 }
-
-                else if (frete1.getDistancia() >= 100) {
-                    frete1.setDistancia(100 * valorDoFrete);
-
-
-                }
-                else if (frete1.getDistancia() >= 300){
-                    frete1.setDistancia(300 * valorDoFrete);
-                    return frete1.getDistancia();
-                }
-                else if (frete1.getDistancia() >= 500) {
-                    frete1.setDistancia(500 * valorDoFrete);
-                    return frete1.getDistancia();
-                }
-
-                else if (frete1.getDistancia() <= 1000) {
-                    frete1.setDistancia(1000 * valorDoFrete);
-                    return frete1.getDistancia();
-                }
-                else {
-
-                    throw new Exception("Distancia excedeu o limite que é até 1000km");
-                }
+                    return frete.valorDoFrete();
 
                 }
             }
