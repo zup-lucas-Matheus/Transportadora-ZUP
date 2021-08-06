@@ -90,7 +90,7 @@ public class ClienteServico {
                         throw new Exception("Não atendemos fretes com distacia menores que 30km");
 
                     }
-                    return frete.valorDoFrete();
+                    return frete1.valorDoFrete();
 
                 }
             }
