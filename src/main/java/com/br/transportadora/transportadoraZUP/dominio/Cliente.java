@@ -12,10 +12,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Cliente {
     private Pessoa cliente;
-    private double Distancia;
+    private double distancia;
     private List<Orcamento> orcamentos = new ArrayList<>();
 
     public double getDistancia() {
-        return Distancia;
+        return distancia;
     }
 }

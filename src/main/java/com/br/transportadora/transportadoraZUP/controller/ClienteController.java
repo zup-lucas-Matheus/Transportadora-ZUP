@@ -37,8 +37,24 @@ public class ClienteController {
         return clienteServico.listaDeCliente();
 
     }
-    @GetMapping("/buscarcliente")
-    public Cliente buscarClientePorCodigo(@RequestParam String codigo) throws Exception {
-        return clienteServico.buscarClienteporCodigo(codigo);
+
+    public Cliente clienteDistanciaPercurso (Cliente cpf) throws Exception{
+       return clienteServico.clienteDistanciaPercurso(cpf);
+
     }
+
+    public double EscolhaCategoria () {
+        return clienteServico.EscolhaCategoria();
+
+    }
+
+    public double SeguroViagem () {
+        return clienteServico.SeguroViagem();
+
+    }
+
+    public double  obterOrcamento (){
+        return clienteServico.obterOrcamento();
+    }
+
 }

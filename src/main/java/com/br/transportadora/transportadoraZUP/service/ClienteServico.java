@@ -47,41 +47,63 @@ public class ClienteServico {
 
 //*=============================================================
 // fazer calco do orcamento
-double ClienteOrc;
+double ClienteDist;
     // verificar se existe
-    public Cliente clienteOrcamento(Cliente cpf) throws Exception {
+    public Cliente clienteDistanciaPercurso(Cliente cpf) throws Exception {
         for (Cliente objLista : clientes){
             if (objLista.getCliente().getCpf().equals(cpf)){
                 //throw new Exception("Cliente já existe");
 
-                 ClienteOrc = objLista.getDistancia();
+                 ClienteDist = objLista.getDistancia();
+
             }
         }
         throw new Exception("Cliente já existe");
     }
 //====================================================================
     //escolher o tipo de categoria
-    public double calculoCategoria() {
-
+    public double EscolhaCategoria() {
         double tpCategoria;
-        if(this.ClienteOrc <= 100){
+        if(this.ClienteDist <= 100){
           tpCategoria =  Categoria.Valor.getCatC();
-        }else if (this.ClienteOrc <= 250){
+        }else if (this.ClienteDist <= 250){
           tpCategoria =  Categoria.Valor.getCatB();
         }else {
             tpCategoria = Categoria.Valor.getCatA();
         }
       return tpCategoria;
     }
+//====================================================================
+
+//escolher o tipo de categoria
+public double SeguroViagem() {
+    double tpSeguro;
+    if(this.ClienteDist <= 50){
+        tpSeguro = 0;
+    }else if (this.ClienteDist <= 100){
+        tpSeguro =  95;
+    }else if (this.ClienteDist <= 250){
+        tpSeguro =  150;
+    }else if (this.ClienteDist <= 550){
+        tpSeguro =  350;
+    }else if (this.ClienteDist <= 1000){
+        tpSeguro =  550;
+    }else {
+        tpSeguro = 750;
+    }
+    return tpSeguro;
+}
+
+//=============================================================================
 
 
 //Calculo do orcamento entre o resultado do
     public double obterOrcamento(){
-        double orcamento = this.ClienteOrc * this.calculoCategoria();
+        double orcamento = ( this.ClienteDist * EscolhaCategoria()) + SeguroViagem();
         return orcamento;
     }
 
-
+//=============================================================================
 
 
 
