@@ -1,16 +1,17 @@
-//package com.br.transportadora.transportadoraZUP.test;
+package com.br.transportadora.transportadoraZUP.test;
+
+import com.br.transportadora.transportadoraZUP.dominio.Orcamento;
+
+public class test {
+
+    public static void main(String[] args) {
+
+
+//        Orcamento or = new Orcamento();
 //
-//public class test {
+//        or.calculo(100, 5);
 //
-//    public static void main(String[] args) {
-//
-//
-//        Motorista m = new Motorista();
-//
-//        m.motorista();
-//
-//
-//
-//
-//    }
-//}
+//        System.out.println(or);
+
+    }
+}
