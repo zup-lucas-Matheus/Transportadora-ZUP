@@ -4,8 +4,6 @@ import com.br.transportadora.transportadoraZUP.dominio.Cliente;
 import com.br.transportadora.transportadoraZUP.dominio.Frete;
 import com.br.transportadora.transportadoraZUP.dominio.Orcamento;
 import com.br.transportadora.transportadoraZUP.service.ClienteServico;
-import com.br.transportadora.transportadoraZUP.service.ServicoDeEntrega;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,9 +15,6 @@ public class ClienteController {
 
     @Autowired
     private ClienteServico clienteServico;
-
-    @Autowired
-    private ServicoDeEntrega servicoDeEntrega;
 
     @PostMapping
     public Cliente cadasstrarCliente(@RequestBody Cliente cliente) throws Exception {
@@ -61,10 +56,15 @@ public class ClienteController {
     }
 
     @GetMapping("/calcula")
-    public double calculoDeDestino(@RequestParam String cpf,@RequestBody Frete frete) throws Exception {
+    public double calculoDeDestino(@RequestParam String cpf, Frete frete) throws Exception {
 
+        try {
             return clienteServico.calculoDeDestino(cpf, frete);
+        }
+        catch (Exception erro){
 
+            throw new Exception("\"Não atendemos fretes com distacia menores que 30km\"");
+        }
 
     }
 

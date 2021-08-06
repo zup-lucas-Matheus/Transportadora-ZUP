@@ -36,8 +36,8 @@ public class ClienteServico {
     }
 
     public void verificarExiste(Cliente cliente) throws Exception {
-        for (Cliente clientes : clientes){
-            if (clientes.getCliente().getCpf().equals(cliente.getCliente().getCpf())){
+        for (Cliente clientes : clientes) {
+            if (clientes.getCliente().getCpf().equals(cliente.getCliente().getCpf())) {
                 throw new Exception("Cliente já existe");
             }
         }
@@ -45,16 +45,16 @@ public class ClienteServico {
     }
 
     //visualizarCliente
-    public List<Cliente> listaDeCliente(){
+    public List<Cliente> listaDeCliente() {
         return clientes;
     }
 
 
     public String excluirContaCliente(String cpf, String codigoDeContrato) throws Exception {
 
-        for (Cliente cliente: clientes) {
+        for (Cliente cliente : clientes) {
             if (cliente.getCliente().getCpf().equals(cpf)) {
-                for (Iterator iterator = cliente.getOrcamentos().iterator(); iterator.hasNext();){
+                for (Iterator iterator = cliente.getOrcamentos().iterator(); iterator.hasNext(); ) {
 
                     Orcamento orcamento = (Orcamento) iterator.next();
                     if (orcamento.getCodigoDeContrato().equals(codigoDeContrato)) {
@@ -67,49 +67,60 @@ public class ClienteServico {
         throw new Exception("Cliente não encontrado");
     }
 
-//
-//    public Categoria escolhaCategoria(String cpf, Orcamento categoria){
-//
-//        for (Cliente cliente: clientes) {
-//            if (cliente.getCliente().getCpf().equals(cpf)){
-//                cliente.getOrcamentos().add(categoria);
-//            }
-//        }
-//
-//
-//
-//    }
-//
-public Cliente cadastrarFreteParaCliente(String cpf, Frete frete) throws Exception {
 
-    for (Cliente cliente : clientes) {
-        if (cliente.getCliente().getCpf().equals(cpf)) {
-            cliente.getFretes().add(frete);
-            return cliente;
+    public Cliente cadastrarFreteParaCliente(String cpf, Frete frete) throws Exception {
+
+        for (Cliente cliente : clientes) {
+            if (cliente.getCliente().getCpf().equals(cpf)) {
+                cliente.getFretes().add(frete);
+                return cliente;
+            }
         }
+        throw new Exception("Cliente não encontrado");
     }
-    throw new Exception("Cliente não encontrado");
-}
 
 
-public double calculoDeDestino(String cpf,Frete frete) throws Exception {
+    public double calculoDeDestino(String cpf, Frete frete) throws Exception {
 
-     for (Cliente cliente : clientes) {
-        if (cliente.getCliente().getCpf().equals(cpf)) {
-            for (Frete frete1: cliente.getFretes()){
+        for (Cliente cliente : clientes) {
+            if (cliente.getCliente().getCpf().equals(cpf)) {
+                for (Frete frete1 : cliente.getFretes()) {
 
-                if (frete1.getDistancia() < 30) {
-                    throw new Exception( "Não atendemos fretes com distacia menores que 30km");
+                    if (frete1.getDistancia() < 30) {
+                        throw new Exception("Não atendemos fretes com distacia menores que 30km");
 
-                }
+                    }
                     return frete.valorDoFrete();
 
                 }
             }
         }
 
-    throw new Exception( "Não atendemos fretes com distacia menores que 30km");
+        throw new Exception("Não atendemos fretes com distacia menores que 30km");
 
-}
+    }
+
+    public Categoria EscolhaCategoria(String cpf, Frete categoria) throws Exception {
+
+        for (Cliente cliente : clientes) {
+            if (cliente.getCliente().getCpf().equals(cpf)) {
+                cliente.getFretes().add(categoria);
+            }
+        }
+        throw new Exception("Cliente não encontrado");
+    }
+
+//    public Cliente cadastrarOrcamentoParaCliente(String cpf,Orcamento orcamento, Frete frete) throws Exception {
+//
+//        for (Cliente cliente : clientes) {
+//            if (cliente.getCliente().getCpf().equals(cpf)) {
+//                for (Orcamento orcamento1: cliente.getOrcamentos())
+//                    cliente.getFretes().add(frete);
+//                    return cliente;
+//            }
+//        }
+//        throw new Exception("Cliente não encontrado");
+//    }
+
 
 }
