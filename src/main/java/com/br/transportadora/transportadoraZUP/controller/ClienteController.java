@@ -63,7 +63,9 @@ public class ClienteController {
     @GetMapping("/calcula")
     public double calculoDeDestino(@RequestParam String cpf,@RequestBody Frete frete) throws Exception {
 
-        return clienteServico.calculoDeDestino(cpf, frete);
+            return clienteServico.calculoDeDestino(cpf, frete);
+
+
     }
 
 }

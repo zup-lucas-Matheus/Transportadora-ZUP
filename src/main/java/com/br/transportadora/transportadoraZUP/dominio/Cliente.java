@@ -17,7 +17,4 @@ public class Cliente {
     private List<Frete> fretes = new ArrayList<>();
 
 
-
-
-
 }

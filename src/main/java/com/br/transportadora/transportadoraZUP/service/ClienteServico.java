@@ -100,6 +100,7 @@ public double calculoDeDestino(String cpf,Frete frete) throws Exception {
 
                 if (frete1.getDistancia() < 30) {
                     throw new Exception( "Não atendemos fretes com distacia menores que 30km");
+
                 }
                     return frete.valorDoFrete();
 
