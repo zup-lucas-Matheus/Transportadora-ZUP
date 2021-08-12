@@ -109,18 +109,4 @@ public class ClienteServico {
         }
         throw new Exception("Cliente não encontrado");
     }
-
-//    public Cliente cadastrarOrcamentoParaCliente(String cpf,Orcamento orcamento, Frete frete) throws Exception {
-//
-//        for (Cliente cliente : clientes) {
-//            if (cliente.getCliente().getCpf().equals(cpf)) {
-//                for (Orcamento orcamento1: cliente.getOrcamentos())
-//                    cliente.getFretes().add(frete);
-//                    return cliente;
-//            }
-//        }
-//        throw new Exception("Cliente não encontrado");
-//    }
-
-
 }
